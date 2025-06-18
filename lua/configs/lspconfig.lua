@@ -1,6 +1,15 @@
-require("nvchad.configs.lspconfig").defaults()
+local lspconfig = require("lspconfig")
 
-local servers = { "html", "cssls" }
-vim.lsp.enable(servers)
+-- Use NvChad's LSP on_attach and default capabilities
+local on_attach = require("nvchad.configs.lspconfig").on_attach
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
--- read :h vim.lsp.config for changing options of lsp servers 
+-- Set up clangd for C/C++
+lspconfig.clangd.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
+-- You can add more LSPs below similarly
+-- lspconfig.html.setup({ on_attach = on_attach, capabilities = capabilities })
+-- lspconfig.cssls.setup({ on_attach = on_attach, capabilities = capabilities })
