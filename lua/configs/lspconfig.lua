@@ -10,6 +10,12 @@ lspconfig.clangd.setup({
   capabilities = capabilities,
 })
 
+require("lspconfig").clangd.setup {
+  capabilities = require("cmp_nvim_lsp").default_capabilities(),
+  cmd = { "clangd", "--compile-commands-dir=." }
+}
+
+
 -- You can add more LSPs below similarly
 -- lspconfig.html.setup({ on_attach = on_attach, capabilities = capabilities })
 -- lspconfig.cssls.setup({ on_attach = on_attach, capabilities = capabilities })
