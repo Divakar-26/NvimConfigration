@@ -76,6 +76,37 @@ return {
 },
 
 
+{
+  "NvChad/nvim-colorizer.lua",
+  event = "BufReadPre",
+  config = function()
+    require("colorizer").setup({
+      "*",
+    }, {
+      RGB      = true,
+      RRGGBB   = true,
+      RRGGBBAA = true,
+      names    = false,
+      css      = true,
+      css_fn   = true,
+      mode     = "background", -- draws the color box
+    })
+    rquire("colorizer").attach_to_buffer(0)
+  end,
+},
+
+{
+  "uga-rosa/ccc.nvim",
+  cmd = { "CccPick", "CccConvert" },
+  config = function()
+    require("ccc").setup({
+      highlighter = {
+        auto_enable = true,
+        lsp = true,
+      },
+    })
+  end,
+},
 
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },

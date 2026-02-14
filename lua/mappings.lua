@@ -22,3 +22,12 @@ map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "Buffers" })
 map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "Help Tags" })
 
  
+-- lua/configs/keymaps.lua
+local function shame()
+  vim.notify("👀 use hjkl", vim.log.levels.WARN, {timeout = 500})
+end
+local opts = { noremap = true, silent = true }
+vim.keymap.set({ "n", "i", "v" }, "<Up>", shame)
+vim.keymap.set({ "n", "i", "v" }, "<Down>", shame)
+vim.keymap.set({ "n", "i", "v" }, "<Left>", shame)
+vim.keymap.set({ "n", "i", "v" }, "<Right>", shame)

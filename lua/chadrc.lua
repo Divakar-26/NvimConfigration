@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-	theme = "carbonfox",
+	theme = "aquarium",
 	transparency = true,
 	-- dashboard = true, -- <- this must be true
 	-- hl_override = {

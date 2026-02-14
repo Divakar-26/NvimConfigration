@@ -32,3 +32,7 @@ for _, server in ipairs(servers) do
   }
 end
 
+lspconfig.pyright.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
